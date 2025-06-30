@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攝影作品展示</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 全屏導航欄 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">攝影視界</a>
+            <div class="menu-toggle" id="mobile-menu">
+                ☰
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">首頁</a></li>
+                <li><a href="#">作品集</a></li>
+                <li><a href="#">關於我</a></li>
+                <li><a href="#">聯絡方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主內容區 -->
+    <div class="main-content">
+        <div class="header">
+            <h1>攝影作品展示</h1>
+            <p>捕捉生活中的美好瞬間，分享世界的美麗角落。每一張照片背後都有一個獨特的故事。</p>
+        </div>
+
+        <!-- 圖片網格 -->
+        <div class="gallery">
+            <!-- 圖片項目 1 -->
+            <div class="gallery-item" onclick="openModal('images/photo1.jpg', '山間日出', '清晨時分，山間的日出美景，陽光穿過雲層灑在大地上。')">
+                <img src="images/photo1.jpg" alt="山間日出" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>山間日出</h3>
+                    <p>清晨時分的美景</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 2 -->
+            <div class="gallery-item" onclick="openModal('images/photo2.jpg', '城市夜景', '繁華都市的夜晚燈光，展現現代城市的活力與魅力。')">
+                <img src="images/photo2.jpg" alt="城市夜景" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>城市夜景</h3>
+                    <p>繁華都市的夜晚</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 3 -->
+            <div class="gallery-item" onclick="openModal('images/photo3.jpg', '海邊日落', '黃昏時分的海邊，夕陽將天空染成金黃色，海浪輕拍沙灘。')">
+                <img src="images/photo3.jpg" alt="海邊日落" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>海邊日落</h3>
+                    <p>黃昏時分的海岸線</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 4 -->
+            <div class="gallery-item" onclick="openModal('images/photo4.jpg', '森林小徑', '幽靜的森林小徑，陽光透過樹葉灑下斑駁的光影。')">
+                <img src="images/photo4.jpg" alt="森林小徑" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>森林小徑</h3>
+                    <p>幽靜的自然步道</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 5 -->
+            <div class="gallery-item" onclick="openModal('images/photo5.jpg', '沙漠星空', '廣闊沙漠上空的璀璨星空，銀河清晰可見。')">
+                <img src="images/photo5.jpg" alt="沙漠星空" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>沙漠星空</h3>
+                    <p>璀璨的夜空美景</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 6 -->
+            <div class="gallery-item" onclick="openModal('images/photo6.jpg', '雪山湖泊', '雪山環抱的湖泊，湖水清澈見底，倒映著周圍的山峰。')">
+                <img src="images/photo6.jpg" alt="雪山湖泊" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>雪山湖泊</h3>
+                    <p>高山湖泊的寧靜</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 7 -->
+            <div class="gallery-item" onclick="openModal('images/photo7.jpg', '田園風光', '鄉村田野的寧靜景色，展現大自然的和諧與美麗。')">
+                <img src="images/photo7.jpg" alt="田園風光" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>田園風光</h3>
+                    <p>鄉村的寧靜景色</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 8 -->
+            <div class="gallery-item" onclick="openModal('images/photo8.jpg', '野生動物', '自然棲息地中的野生動物，展現生命的活力與多樣性。')">
+                <img src="images/photo8.jpg" alt="野生動物" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>野生動物</h3>
+                    <p>自然中的生命奇蹟</p>
+                </div>
+            </div>
+
+            <!-- 圖片項目 9 -->
+            <div class="gallery-item" onclick="openModal('images/photo9.jpg', '街頭人文', '城市街頭的人文瞬間，記錄人們的日常生活與情感。')">
+                <img src="images/photo9.jpg" alt="街頭人文" class="gallery-img">
+                <div class="gallery-caption">
+                    <h3>街頭人文</h3>
+                    <p>城市的日常生活</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 圖片彈窗 -->
+    <div class="modal" id="imageModal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" class="modal-img" src="" alt="">
+            <div class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <p>© 2023 攝影視界 版權所有</p>
+        <p>用鏡頭記錄美好瞬間</p>
+        <ul class="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Flickr</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
